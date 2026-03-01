@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-primary: #5C24FF;
+  --color-accent: #FF3BFF;
+  --color-muted: #9ca3af;
+  --color-card: #0a0a1a;
+  --color-card-border: #1a1a2e;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #000000;
+    color: #ffffff;
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .text-gradient-primary {
+    background: linear-gradient(90deg, #FF3BFF 0%, #ECBFBF 38.02%, #5C24FF 75.83%, #D94FD5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-primary {
+    background: linear-gradient(90deg, #FF3BFF 0%, #ECBFBF 38.02%, #5C24FF 75.83%, #D94FD5 100%);
+  }
+
+  .bg-glow {
+    background: radial-gradient(ellipse at 50% 40%, rgba(92, 36, 255, 0.2) 0%, rgba(255, 59, 255, 0.05) 40%, transparent 70%);
+  }
+
+  .card-glow {
+    background: linear-gradient(160deg, rgba(92, 36, 255, 0.08) 0%, rgba(13, 13, 30, 0.9) 50%, rgba(255, 59, 255, 0.04) 100%);
+    border: 1px solid rgba(92, 36, 255, 0.15);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-glow:hover {
+    border-color: rgba(92, 36, 255, 0.5);
+    background: linear-gradient(160deg, rgba(92, 36, 255, 0.15) 0%, rgba(13, 13, 30, 0.95) 50%, rgba(255, 59, 255, 0.08) 100%);
+    box-shadow: 0 0 30px rgba(92, 36, 255, 0.15), 0 0 60px rgba(92, 36, 255, 0.05);
+    transform: translateY(-2px);
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 20px rgba(92, 36, 255, 0.4), 0 0 40px rgba(92, 36, 255, 0.15);
+  }
+
+  .star-filled {
+    filter: drop-shadow(0 0 4px rgba(250, 204, 21, 0.5));
+  }
+
+  .section-glow {
+    position: relative;
+  }
+
+  .section-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(92, 36, 255, 0.3) 50%, transparent 100%);
+  }
+}
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(92, 36, 255, 0.3);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(92, 36, 255, 0.5);
+  }
 }
