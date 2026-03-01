@@ -51,9 +51,9 @@ const itemVariants: Variants = {
 
 export default function Advantages() {
   return (
-    <section id="features" className="relative py-24 md:py-32 px-4 section-glow">
+    <section id="features" className="relative py-24 md:py-32 px-4 section-glow overflow-hidden">
       {/* Background accent */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#5C24FF]/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-[#5C24FF]/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="relative max-w-[1200px] mx-auto">
         <motion.div

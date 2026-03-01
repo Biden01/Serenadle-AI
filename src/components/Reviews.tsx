@@ -75,7 +75,7 @@ export default function Reviews() {
   };
 
   return (
-    <section id="reviews" className="relative py-24 md:py-32 px-4 section-glow">
+    <section id="reviews" className="relative py-24 md:py-32 px-4 section-glow overflow-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

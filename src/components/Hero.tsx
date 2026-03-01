@@ -8,8 +8,8 @@ export default function Hero() {
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24 pb-8 overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-glow pointer-events-none" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#5C24FF]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-[#FF3BFF]/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-64 md:w-96 h-64 md:h-96 bg-[#5C24FF]/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/3 w-48 md:w-72 h-48 md:h-72 bg-[#FF3BFF]/5 rounded-full blur-[100px] pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -17,7 +17,7 @@ export default function Hero() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative z-10 max-w-4xl mx-auto"
       >
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium leading-[1.1] tracking-tight">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium leading-[1.1] tracking-tight">
           <span className="text-gradient-primary">A Fast Blockchain.</span>
           <br />
           <span className="text-white">Scalable AI.</span>
@@ -38,17 +38,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 md:mt-10"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8 md:mt-10 px-4"
         >
           <a
             href="#features"
-            className="btn-glow px-8 py-3.5 rounded-full border border-[#5C24FF] text-white hover:bg-[#5C24FF]/15 transition-all duration-300 text-sm font-medium"
+            className="btn-glow w-full sm:w-auto px-8 py-3 rounded-full border border-[#5C24FF] text-white hover:bg-[#5C24FF]/15 transition-all duration-300 text-sm font-medium text-center"
           >
             Get started
           </a>
           <a
             href="#reviews"
-            className="px-8 py-3.5 rounded-full border border-white/20 text-white hover:border-white/50 hover:bg-white/5 transition-all duration-300 text-sm font-medium"
+            className="w-full sm:w-auto px-8 py-3 rounded-full border border-white/20 text-white hover:border-white/50 hover:bg-white/5 transition-all duration-300 text-sm font-medium text-center"
           >
             Ecosystems
           </a>
